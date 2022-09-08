@@ -44,12 +44,13 @@ public class GameGrid {
                 }
                 System.out.printf("%3s", aiBoard[y][x]);
             }
-            //TODO: remove .....
+            /**
+             * TODO: UN-COMMENT to display a Grid with answers
             System.out.print("\t\t");
             for(int x = 0; x < aiGrid[y].length; x++){
                 System.out.printf("%3s", aiGrid[y][x]);
             }
-            //TODO: ^^^^^
+            */
             System.out.println();
         }
 

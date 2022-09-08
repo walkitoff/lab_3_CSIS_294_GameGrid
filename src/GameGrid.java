@@ -42,16 +42,15 @@ public class GameGrid {
                 } else {
                     aiGrid[y][x] = 0;
                 }
-               // System.out.printf("%3s", aiBoard[y][x]);
             }
-
-            //System.out.println();
         }
 
         printGameBoard();
+
         while (true) {
             System.out.println("Type 'R' for right or 'D' for down: ");
             uInput = Character.toUpperCase(sc.next().charAt(0));
+
             if (uInput == 'R') {
                 if (aiGrid[iUserCol][iUserRow + 1] == 1) {
                     aiBoard[iUserCol][iUserRow + 1] = wall;
@@ -73,17 +72,18 @@ public class GameGrid {
                     aiBoard[iUserCol][iUserRow] = boat;
                 }
             }
-           printGameBoard();
+
+            printGameBoard();
+
             if(iUserRow == 9 || iUserCol == 9){
                 System.out.println("***********************");
                 System.out.println("        YOU WIN        ");
                 System.out.println("***********************");
                 System.exit(0);
             }
+
         }
-
         System.out.println("GAME OVER....YOUR SHIP HIT A WALL!!!!");
-
     }
 
 

@@ -42,19 +42,13 @@ public class GameGrid {
                 } else {
                     aiGrid[y][x] = 0;
                 }
-                System.out.printf("%3s", aiBoard[y][x]);
+               // System.out.printf("%3s", aiBoard[y][x]);
             }
-            /**
-             * TODO: UN-COMMENT to display a Grid with answers
-            System.out.print("\t\t");
-            for(int x = 0; x < aiGrid[y].length; x++){
-                System.out.printf("%3s", aiGrid[y][x]);
-            }
-            */
-            System.out.println();
+
+            //System.out.println();
         }
 
-
+        printGameBoard();
         while (true) {
             System.out.println("Type 'R' for right or 'D' for down: ");
             uInput = Character.toUpperCase(sc.next().charAt(0));
@@ -67,7 +61,6 @@ public class GameGrid {
                     aiBoard[iUserCol][iUserRow] = clearedSpace;
                     iUserRow++;
                     aiBoard[iUserCol][iUserRow] = boat;
-
                 }
             }else if (uInput == 'D') {
                 if (aiGrid[iUserCol + 1][iUserRow] == 1) {
@@ -97,7 +90,14 @@ public class GameGrid {
     public void printGameBoard(){
         for (int y = 0; y < aiBoard.length; y++) {
             for (int x = 0; x < aiBoard[y].length; x++){
-                System.out.printf("%3s", aiBoard[y][x]);
+                System.out.printf("%2s", aiBoard[y][x]);
+            }
+            //displays answers if you win
+            if(iUserRow == 9 || iUserCol == 9) {
+                System.out.print("\t");
+                for (int x = 0; x < aiGrid[y].length; x++) {
+                    System.out.printf("%3s", aiGrid[y][x]);
+                }
             }
             System.out.println();
         }
